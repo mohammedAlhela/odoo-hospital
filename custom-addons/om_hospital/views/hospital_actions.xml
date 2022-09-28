@@ -1,0 +1,66 @@
+<odoo>
+    <record id="action_hospital_patient" model="ir.actions.act_window">
+        <field name="name">Hospital Patients</field>
+        <field name="res_model">hospital.patient</field>
+        <field name="view_mode">tree,form</field>
+        <field name="context">{}</field>
+        <field name="help" type="html">
+            <p>
+            Create your first patient !
+          </p>
+        </field>
+    </record>
+
+    <record id="action_hospital_female_patient" model="ir.actions.act_window">
+        <field name="name">Hospital Female Patients</field>
+        <field name="res_model">hospital.patient</field>
+        <field name="view_mode">tree,form</field>
+        <field name="context">{'default_gender' : 'female' , 'default_age' : 28 , 'search_default_filter_female' : 1 , 'search_default_group_by_gender' : 1 }</field>
+        <field name="domain">[('gender' , '=' , 'female')]</field>
+        <field name="help" type="html">
+            <p>
+            Create your first female patient !
+          </p>
+        </field>
+    </record>
+
+    <record id="action_hospital_appointment" model="ir.actions.act_window">
+        <field name="name">Hospital Appointments </field>
+        <field name="res_model">hospital.appointment</field>
+        <field name="view_mode">tree,form,activity</field>
+        <field name="context"></field>
+        <field name="domain"></field>
+        <field name="help" type="html">
+            <p>
+            Create your first appointment !
+          </p>
+        </field>
+    </record>
+
+    <record id="action_hospital_patient_tag" model="ir.actions.act_window">
+      <field name="name">Hospital Patients Tags</field>
+      <field name="res_model">patient.tag</field>
+      <field name="view_mode">tree,form</field>
+      <field name="context"></field>
+      <field name="domain"></field>
+      <field name="help" type="html">
+          <p>
+          Create your first tag !
+        </p>
+      </field>
+  </record>
+
+
+  <record id="action_cancel_appointment_wizard" model="ir.actions.act_window">
+    <field name="name">Cancel appointment wizard</field>
+    <field name="res_model">cancel.appointment.wizard</field>
+    <field name="view_mode">form</field>
+    <field name="context"></field>
+    <field name="domain"></field>
+    <field name="target">new</field>
+</record>
+
+
+
+
+</odoo>

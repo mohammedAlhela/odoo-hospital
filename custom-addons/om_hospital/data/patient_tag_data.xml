@@ -1,0 +1,11 @@
+<odoo noupdate="1">
+  <record model="patient.tag" id="patient_tag_vip">
+    <field name="name">Vip</field> 
+    <field name="active" eval = "False" />
+  </record>
+
+  <record model="patient.tag" id="patient_tag_india">
+    <field name="name">India</field> 
+    <field name="active" eval = "False" />
+  </record>
+</odoo>

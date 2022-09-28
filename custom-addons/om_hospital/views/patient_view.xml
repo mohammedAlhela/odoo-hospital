@@ -1,0 +1,66 @@
+<odoo>
+
+  <record id="view_form_patient" model="ir.ui.view">
+    <field name="name">Hospital Patient Form</field>
+    <field name="model">hospital.patient</field>
+    <field name="arch" type="xml">
+      <form>
+        <sheet>
+          <group name="group_root">
+            <field name="name" />
+            <field name="image"  widget = "image" class = "oe_avatar" />
+            <field name="gender" />
+            <field name="age" />
+            <field name="birth" />
+            <field name="tag_ids" widget = "many2many_tags" options = "{'color_field' : 'color_select'}" />
+            <field name="ref" />
+            <field name="active" />
+          </group>
+          <div class="oe_chatter">
+            <field name="message_follower_ids" widget="mail_followers" />
+            <field name="activity_ids" widget="mail_activity" />
+            <field name="message_ids" widget="mail_thread" />
+          </div>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+  <record id="view_tree_patient" model="ir.ui.view">
+    <field name="name">Patients List</field>
+    <field name="model">hospital.patient</field>
+    <field name="arch" type="xml">
+      <tree sample = "1" multi_edit = "1">
+        <field name="name" />
+        <field name="gender" />
+        <field name="birth" />
+        <field name="age" />
+        <field name="ref" />
+        <field name="active" invisible="1" />
+      </tree>
+    </field>
+  </record>
+
+  <record id="view_search_patient" model="ir.ui.view">
+    <field name="name">Patients Filters</field>
+    <field name="model">hospital.patient</field>
+    <field name="arch" type="xml">
+      <search>
+        <field name="name" string="Patient name" filter_domain="[ '|' ,  ('name'  , 'ilike' , self) , ('ref' , 'ilike' , self)]" />
+        <field name="age" string="Patient age" />
+        <field name="gender" string="Patient gender" />
+        <filter name="filter_male" string="Male" domain="[('gender','=','male')]" />
+        <filter name="filter_female" string="Female" domain="[('gender','=','female')]" />
+        <separator />
+        <filter name="filter_archive" string="Archived" domain="[('active','=', False)]" />
+        <group>
+          <filter string="Gender" name="group_by_gender" context="{'group_by' : 'gender'}" />
+        </group>
+        <searchpanel>
+          <field name="gender" icon="fa-users" select="multi" enable_counters="1"></field>
+        </searchpanel>
+      </search>
+    </field>
+  </record>
+
+</odoo>

@@ -1,0 +1,31 @@
+<odoo>
+
+  <record id="view_form_patient_tag" model="ir.ui.view">
+    <field name="name">Hospital Patient tags Form</field>
+    <field name="model">patient.tag</field>
+    <field name="arch" type="xml">
+      <form>
+        <sheet>
+          <group name="group_root">
+            <field name="name" />
+            <field name="active" widget = "boolean_toggle" />
+            <field name="color_select" widget = "color_picker" />
+            <field name="color_picker" widget = "color" />
+          </group>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+  <record id="view_tree_patient_tag" model="ir.ui.view">
+    <field name="name">Patients Tags List</field>
+    <field name="model">patient.tag</field>
+    <field name="arch" type="xml">
+      <tree sample = "1" multi_edit = "1">
+        <field name="name" />
+        <field name="active" />
+      </tree>
+    </field>
+  </record>
+
+</odoo>

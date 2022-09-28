@@ -1,0 +1,13 @@
+<odoo>
+  <menuitem id="menu_hospital_root" name="Hospital" web_icon="om_hospital,static/description/modules.png" />
+  <menuitem id="menu_patient_root" name="Patients Details" parent="menu_hospital_root" />
+  <menuitem id="menu_patient" name="Patients" action="action_hospital_patient" parent="menu_patient_root" />
+  <menuitem id="menu_patient_tag" name="Patients Tags" action="action_hospital_patient_tag" parent="menu_patient_root" />
+  <menuitem id="menu_female_patient" name="Female Patients" action="action_hospital_female_patient" parent="menu_patient_root" /> 
+  <menuitem id="menu_appointment" name="Appointments" action="action_hospital_appointment" parent="menu_hospital_root" /> 
+
+  <menuitem id="options-root" name="Options"  parent="menu_hospital_root" >
+    <menuitem id="menu_cancel_appointment" name="Cancel Appointments" action="action_cancel_appointment_wizard"/> 
+  </menuitem>
+
+</odoo>

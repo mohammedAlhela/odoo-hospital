@@ -1,0 +1,21 @@
+<odoo>
+  <record id="view_form_cancel_appointment_wizard" model="ir.ui.view">
+    <field name="name">Cancel Appointment wizard Form</field>
+    <field name="model">cancel.appointment.wizard</field>
+    <field name="arch" type="xml">
+      <form>
+        <sheet>
+          <group name="group_root">
+            <field name="appointment_id" invisible = "context.get('hide_appointment')" />
+            <field name="reason" />
+            <field name="cancel_date" />
+          </group>
+          <footer>
+            <button name = "cancel_appointment"  string = "Cancel Appointment" class = "btn-primary" />
+            <button special = "cancel"  string = "Close" class = "btn-secondary" />
+          </footer>
+        </sheet>
+      </form>
+    </field>
+  </record>
+</odoo>
